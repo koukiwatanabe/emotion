@@ -10,4 +10,9 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :posts
+  
+  
+  def feed_posts
+    Post.all
+  end
 end
