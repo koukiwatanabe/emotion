@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  # ポストの数のカウントをViewに表示する
+  def counts(user)
+    @count_posts = user.posts.count
+  end
 end

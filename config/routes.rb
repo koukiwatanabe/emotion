@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   # ユーザー登録（サインアップ）
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :new, :create]
+  
+  # 投稿機能（ポスト）
+  resources :posts, only: [:create, :destroy]
+  
 end
 
