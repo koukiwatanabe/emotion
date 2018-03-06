@@ -9,10 +9,17 @@ Rails.application.routes.draw do
   
   # ユーザー登録（サインアップ）
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create]
+  resources :users, only: [:index, :show, :new, :create] do
+    member do
+      # お気に入り中のツイート一覧を表示するページ
+      get :favorites
+    end
+  end
   
   # 投稿機能（ポスト）
-  resources :posts, only: [:create, :destroy]
+  resources :posts, only: [:new, :create, :destroy]
   
+  # いいね機能
+  resources :favorites, only: [:create, :destroy]
 end
 

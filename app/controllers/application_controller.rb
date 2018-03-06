@@ -14,5 +14,6 @@ class ApplicationController < ActionController::Base
   # ポストの数のカウントをViewに表示する
   def counts(user)
     @count_posts = user.posts.count
+    @count_favorites = user.favorites.count
   end
 end

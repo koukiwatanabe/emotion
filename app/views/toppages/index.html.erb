@@ -1,13 +1,5 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-4">
-      <%= form_for(@post) do |f| %>
-        <div class="form-group">
-          <%= f.text_area :content, class: 'form-control', rows: 5 %>
-        </div>
-        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
-      <% end %>
-    </aside>
     <div class="col-xs-8">
       <%= render 'posts/posts', posts: @posts %>
     </div>
@@ -15,8 +7,10 @@
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
-      <h1>Welcome to the Emotion</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+      <h1>Emotion</h1>
+      <h2>何気ない日常と、かけがえのない記憶</h2>
+      <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'Log in', login_path, class: 'btn btn-lg btn-primary' %>
     </div>
   </div>
 <% end %>

@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy]
   
+  def new
+    @post = Post.new
+  end
 
   def create # Postの保存
     @post = current_user.posts.build(post_params)
@@ -15,16 +18,20 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy # Postの削除
     @post.destroy
     flash[:success] = 'メッセージを削除しました。'
     redirect_back(fallback_location: root_path)
+  end
+  
+  def rank
+    @rank = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :picture)
   end
   
   def correct_user
