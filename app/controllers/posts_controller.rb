@@ -23,10 +23,10 @@ class PostsController < ApplicationController
     flash[:success] = 'メッセージを削除しました。'
     redirect_back(fallback_location: root_path)
   end
-  
-  def rank
-    @rank = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
-  end
+
+#  def rank #良いねされたポストのランキング
+#    @rank = Favorite.group(id :post_id).order(id :post_id)count(:post_id)
+#  end
 
   private
 

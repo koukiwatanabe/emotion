@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     end
   end
   
+  # ランキング機能
+  get 'ranking', to: 'ranking#index'
+  
   # 投稿機能（ポスト）
   resources :posts, only: [:new, :create, :destroy]
   

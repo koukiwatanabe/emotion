@@ -5,12 +5,20 @@
     </div>
   </div>
 <% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Emotion</h1>
-      <h2>何気ない日常と、かけがえのない記憶</h2>
-      <%= link_to 'Sign up', signup_path, class: 'btn btn-lg btn-primary' %>
-      <%= link_to 'Log in', login_path, class: 'btn btn-lg btn-primary' %>
+  <% content_for :cover do %>
+  <div class="cover">
+    <div class="cover-inner">
+      <div class="cover-contents">
+        <h1>Emotion</h1>
+        <h2>何気ない日常と、かけがえのない記憶</h2>
+          <% unless logged_in? %>
+            <%= link_to 'Sign up', signup_path, class: 'btn btn-success btn-lg' %><br>
+            <%= link_to 'Login', login_path, class: 'btn btn-success btn-lg' %>
+          <% end %>
+      </div>
     </div>
   </div>
+<% end %>
+
+<p>テスト</p>
 <% end %>
