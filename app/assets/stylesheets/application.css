@@ -11,6 +11,8 @@ footer {
 /* navbar */
 .navbar {
   background-color: #fff;
+  padding: 10px 30px;
+  font-size: large;
 }
 .navbar-header img {
   margin-top: 5px;
@@ -22,7 +24,7 @@ footer {
   margin-top: -20px;
   margin-bottom: 20px;
   width: auto;
-  height: 1000px;
+  height: 800px;
   background: url("/images/cover-bg.jpg") center center no-repeat;
   background-size: cover;
 }
@@ -49,4 +51,43 @@ footer {
   margin: 40px 0 60px 0;
   color: #fff;
   letter-spacing: 0.20em;
+}
+
+.cover-btn {
+  width: 120px;
+  margin: auto;
+}
+
+.cover-btn .btn {
+  background-color: rgba(0,10,10,0.2);
+  
+}
+
+.container {
+  margin: 15px auto;
+  width: 700px;
+}
+
+.col-xs-8 {
+  margin: 15px auto;
+  width: 700px;
+}
+
+.media-list {
+  margin: 15px auto;
+  width: 650px;
+}
+
+.media {
+  padding: 15px 70px 15px 80px;
+  background-color: #fff;
+}
+
+.media-left {
+  padding: 10px;
+}
+
+.media-title{
+  padding-top: 10px;
+  font-size: 200%;
 }

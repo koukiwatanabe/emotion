@@ -11,14 +11,14 @@
       <div class="cover-contents">
         <h1>Emotion</h1>
         <h2>何気ない日常と、かけがえのない記憶</h2>
-          <% unless logged_in? %>
-            <%= link_to 'Sign up', signup_path, class: 'btn btn-success btn-lg' %><br>
-            <%= link_to 'Login', login_path, class: 'btn btn-success btn-lg' %>
-          <% end %>
+        <% unless logged_in? %>
+          <div class="cover-btn">
+             <%= link_to 'Sign up', signup_path, class: 'btn btn-success btn-lg btn-block' %>
+             <%= link_to 'Login', login_path, class: 'btn btn-success btn-lg btn-block' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-<% end %>
-
-<p>テスト</p>
+  <% end %>
 <% end %>

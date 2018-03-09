@@ -1,0 +1,8 @@
+<h1><%= @post.title %></h1>
+
+<%= link_to @post.user.name, user_path(@post.user) %> <span class="text-muted">posted at <%= @post.created_at %></span>
+
+  <p><%= image_tag(@post.picture, :width => "500", :height => "responsive") %></p>
+  <p><%= @post.content %></p>
+
+<%= link_to '一覧に戻る', root_path %>

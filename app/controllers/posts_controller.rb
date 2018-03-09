@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+  
+  def show
+    @post = Post.find(params[:id])
+  end
 
   def create # Postの保存
     @post = current_user.posts.build(post_params)
@@ -24,14 +28,10 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-#  def rank #良いねされたポストのランキング
-#    @rank = Favorite.group(id :post_id).order(id :post_id)count(:post_id)
-#  end
-
   private
 
   def post_params
-    params.require(:post).permit(:content, :picture)
+    params.require(:post).permit(:content, :title, :picture)
   end
   
   def correct_user

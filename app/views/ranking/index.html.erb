@@ -1,17 +1,18 @@
 <ul class="media-list">
   <% @rank.each do |rank| %>
     <li class="media">
-      <div class="media-left">
-        <img class="media-object img-rounded" src="<%= gravatar_url(rank.user, options = { size: 50 }) %>" alt="">
-      </div>
+      
       <div class="media-body">
-        <div>
+        <div class="media-title">
+          <%= link_to rank.title, rank %>
+        </div>
+        <div class="media-user">
           <%= link_to rank.user.name, user_path(rank.user) %> <span class="text-muted">posted at <%= rank.created_at %></span>
         </div>
-        <div>
-          <p><%= image_tag(rank.picture, :width => "responsive", :height => "500") %></p>
+        <div class="media-image">
+          <p><%= image_tag(rank.picture, :width => "500", :height => "responsive") %></p>
         </div>
-        <div>
+        <div class="media-content">
           <p><%= rank.content %></p>
         </div>
       </div>

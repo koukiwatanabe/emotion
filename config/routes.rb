@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'ranking', to: 'ranking#index'
   
   # 投稿機能（ポスト）
-  resources :posts, only: [:new, :create, :destroy]
+  resources :posts, only: [:new, :create, :destroy, :show]
   
   # いいね機能
   resources :favorites, only: [:create, :destroy]
